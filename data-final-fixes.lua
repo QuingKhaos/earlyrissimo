@@ -76,4 +76,12 @@ if mods["space-age"] then
     :add_science_pack({"space-science-pack", 1})
     :add_science_pack({"agricultural-science-pack", 1})
     :commit()
+
+  if settings.startup["Factorissimo2-space-architecture"].value then
+    khaoslib_technology:load("factory-space-architecture")
+      :remove_prerequisite("promethium-science-pack")
+      :remove_science_pack("cryogenic-science-pack")
+      :remove_science_pack("promethium-science-pack")
+      :commit()
+  end
 end

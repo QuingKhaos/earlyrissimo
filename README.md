@@ -5,6 +5,6 @@
 # Earlyrissmo
 
 Early Factorissimo building and upgrades for all your early game needs. Makes the factories a bit cheaper and gives you
-earlier access to the factory 3 too.
+earlier access to the factory 3 too. If you have Space Age installed, the space factories are also accessible earlier.
 
 For recursion there are already map settings in Factorissimo to make it free and hide the techs.

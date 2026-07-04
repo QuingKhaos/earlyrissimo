@@ -4,3 +4,4 @@ Date: 2026-07-04
   Changes:
     - Make Factorissimo available earlier in the game, as well as some basic upgrades for it.
     - Cheaper recipe for factories and earlier available factory 3.
+    - Make space factories available before Aquilo.
