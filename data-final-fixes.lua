@@ -1,9 +1,9 @@
-local khaoslib_recipe = require("__khaoslib__.recipe")
-local khaoslib_technology = require("__khaoslib__.technology")
+local khaoslib_recipe = require("__khaoslib__.prototypes.recipe")
+local khaoslib_technology = require("__khaoslib__.prototypes.technology")
 
 khaoslib_technology:load("factory-architecture-t1")
   :clear_prerequisites()
-  :unset("unit")
+  :clear_unit()
   :set({
     research_trigger = {
       type = "craft-item",
@@ -16,7 +16,6 @@ khaoslib_technology:load("factory-architecture-t1")
   :commit()
 
 khaoslib_recipe:load("factory-1")
-  :clear_ingredients()
   :replace_ingredient("stone", {type = "item", name = "stone-brick", amount = 50})
   :replace_ingredient("iron-plate", function(ingredient)
     ingredient.amount = 50
@@ -29,12 +28,12 @@ khaoslib_recipe:load("factory-1")
   :commit()
 
 khaoslib_technology:load("factory-connection-type-fluid")
-  :set({unit = {count = 20}})
+  :merge_unit {count = 20}
   :commit()
 
 khaoslib_technology:load("factory-interior-upgrade-display")
   :replace_prerequisite("factory-architecture-t2", "factory-architecture-t1")
-  :set({unit = {count = 50}})
+  :merge_unit {count = 50}
   :remove_science_pack("logistic-science-pack")
   :commit()
 
@@ -52,7 +51,7 @@ khaoslib_recipe:load("factory-2")
 khaoslib_technology:load("factory-architecture-t3")
   :remove_prerequisite("production-science-pack")
   :remove_science_pack("production-science-pack")
-  :set({unit = {count = 1000}})
+  :merge_unit {count = 1000}
   :commit()
 
 khaoslib_recipe:load("factory-3")
